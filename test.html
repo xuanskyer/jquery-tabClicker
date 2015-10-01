@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>tab-click测试</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="jquery-TabClicker.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <ul class="nav nav-tabs tabClicker">
+        <li data-triggerType="click"
+            data-requestUrl=""
+            data-requestType="post"
+            data-requestParams="domain_id=8690&id=111&name=322"
+            data-triggerAuto="true"
+            data-callback="callback_basic"
+            class="active first">
+            <a href="#basic" role="tab" data-toggle="tab" >tab1</a>
+        </li>
+        <li data-requestType="get"
+            data-callback="callback_manager">
+            <a href="#second" role="tab" data-toggle="tab">tab2</a>
+        </li>
+    </ul>
+    <div id="basic"  class="tab-pane fade active in">
+        basic
+    </div>
+    <div id="second" class="tab-pane fade">
+        second
+    </div>
+</div>
+
+<script>
+    $(function(){
+        var callback_maps = {
+            callback_basic:function(){
+                console.log('callback_basic');
+            },
+            callback_manager:function(){
+                console.log('callback_manager');
+            }
+        }
+        $('.tabClicker').find('li').TabClicker({
+            callback_maps:callback_maps
+        });
+    });
+</script>
