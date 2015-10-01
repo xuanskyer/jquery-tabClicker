@@ -34,7 +34,7 @@
  *      $('.tabClicker').find('.first').TabClicker({
  *          'callback':callback_maps.callback_basic(res)
  *      });
- * @author: xuanskyer | <xuanskyer@gmail.com>
+ * @author: xuanskyer | <xuanskyer@163.com>
  * @time:   2015-10-01 13:43:35
  */
 ;(function(win, $){
